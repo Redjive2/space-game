@@ -1,0 +1,161 @@
+/*FONTS*/
+
+@font-face {
+    font-family: nexa;
+    src: url('../assets/nexa-bold.otf');
+}
+
+/*BODY STYLES*/
+
+body {
+    margin: 0;
+    font-family: nexa;
+    user-select: none;
+}
+
+/*GENERIC MENU STYLES*/
+
+#menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.genericMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.genericMenuButton {
+    padding: 5px;
+    border: none;
+    outline: 3px solid white;
+    width: 150px;
+    height: 28px;
+    background-color: rgb(0, 0, 0, 0.5);
+    outline: 2px solid rgb(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: width ease-in-out 500ms, height ease-in-out 500ms;
+}
+
+.genericMenuButton:hover {
+    outline: 2px solid rgb(255, 255, 255, 0.2);
+    width: 170px;
+    height: 32px;
+}
+
+.genericMenuButton:active {
+    transition: width cubic-bezier(0,2,0,1) 750ms, height cubic-bezier(0,2,0,1) 750ms;
+    width: 150px;
+    height: 28px;
+}
+
+@keyframes codeButtonFlashRed {
+    from {
+        outline: 2px solid rgb(255, 0, 0, 0.5);
+    }
+}
+
+@keyframes codeButtonFlashGreen {
+    from {
+        outline: 2px solid lime;
+    }
+}
+
+@keyframes darken {
+    to {
+        filter: brightness(0%);
+        opacity: 0;
+    }
+}
+
+.genericMenuInput {
+    padding: 5px;
+    background-color: rgb(0, 0, 0, 0.5);
+    outline: 2px solid rgb(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    max-width: 150px;
+    text-align: center;
+}
+
+.genericMenuInput:focus {
+    outline: 2px solid rgb(255, 255, 255, 0.2);
+}
+
+@keyframes inputTypePulse {
+    from {
+        outline: 2px solid rgb(255, 255, 255, 0.3);
+    }
+}
+
+@keyframes inputTypePulseWrong {
+    from {
+        outline: 2px solid rgb(255, 0, 0, 0.3);
+    }
+}
+
+#roomCodeContainer {
+    display: flex;
+    background-color: rgb(0, 0, 0, 0.5);
+    outline: 2px solid rgb(255, 255, 255, 0.2);
+}
+
+numeric-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+numeric-input span {
+    animation: numericButtonPop 0.25s forwards;
+}
+
+numeric-input button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: unset;
+    cursor: pointer;
+    transition: scale cubic-bezier(0,2,.5,1) 250ms;
+}
+
+@keyframes numericButtonPop {
+    from {
+        scale: 110%;
+    }
+}
+
+@keyframes numericButtonUp {
+    from {
+        translate: 0px -2px;
+    }
+}
+
+@keyframes numericButtonDown {
+    from {
+        translate: 0px 2px;
+    }
+}
+
+numeric-input button:hover {
+    scale: 120%;
+}
+
+numeric-input button:active {
+    scale: 100%;
+}
+
+/*MAIN MENU STYLES*/
+
+#mainMenuTitle {
+    font-size: 2em;
+    font-weight: 700;
+}
